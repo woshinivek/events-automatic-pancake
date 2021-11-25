@@ -9,6 +9,10 @@ body {
   color: #2a2a2a;
 }
 
+h4 {
+  margin: 0;
+}
+
 .container {
   width: 1200px;
   padding-right: 15px;
@@ -32,6 +36,10 @@ body {
   transition-property: background-color, color, box-shadow;
   transition-duration: 250ms;
   transition-timing-function: var(--timing);
+}
+
+.form-field + .magic-button {
+  margin-top: 20px;
 }
 
 .magic-button:hover {
@@ -60,11 +68,7 @@ body {
     0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 }
 
-.js-register-form {
-  box-sizing: border-box;
-}
-
-.form-field {
+.form-field.register {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
@@ -74,7 +78,7 @@ body {
   margin-bottom: 5px;
 }
 
-.form-field input {
+.register-form__input {
   height: 25px;
   /* width: 100%; */
   border: 1px solid rgba(33, 33, 33, 0.2);

@@ -12,8 +12,8 @@
 
     <div class="form-container">
       <form class="js-register-form" autocomplete="off">
-        <div class="register-form__group" role="group">
-          <div class="form-field">
+        <div role="group">
+          <div class="form-field register">
             <label class="register-form__label" for="email">Email</label>
             <input
               class="register-form__input"
@@ -23,7 +23,7 @@
             />
           </div>
 
-          <div class="form-field">
+          <div class="form-field register">
             <label class="register-form__label" for="password">Password</label>
             <input
               class="register-form__input"
@@ -33,6 +33,31 @@
             />
           </div>
         </div>
+
+        <br />
+
+        <div role="group">
+          <h4>Subscription type</h4>
+
+          <div class="form-field">
+            <label for="free">Free</label>
+            <input type="radio" name="subscription" id="free" value="free" />
+          </div>
+
+          <div class="form-field">
+            <label for="basic">Basic</label>
+            <input type="radio" name="subscription" id="basic" value="basic" />
+          </div>
+
+          <div class="form-field">
+            <label for="pro">PRO</label>
+            <input type="radio" name="subscription" id="pro" value="pro" />
+          </div>
+        </div>
+
+        <br />
+
+        <button type="submit" class="magic-button register">Register</button>
       </form>
     </div>
   </body>
