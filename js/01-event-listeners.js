@@ -24,8 +24,24 @@ const onTargetButtonClick = () => {
   console.log("click-3");
 };
 
+// const onAddListenerBtnClick = () => {
+//   console.log("Click on add event listener btn");
+// };
+
 // targetBtn.addEventListener("click", handleTargetButtonClick);
 // targetBtn.addEventListener("click", targetButtonClickHandler);
-targetBtn.addEventListener("click", onTargetButtonClick);
+// targetBtn.addEventListener("click", onTargetButtonClick);
 
 // ---------------------------------------------------------------------
+
+addListenerBtn.addEventListener("click", () => {
+  console.log("added event listener on target btn");
+
+  targetBtn.addEventListener("click", onTargetButtonClick);
+});
+
+removeListenerBtn.addEventListener("click", () => {
+  console.log("remove event listener from target btn");
+
+  targetBtn.removeEventListener("click", onTargetButtonClick);
+});
