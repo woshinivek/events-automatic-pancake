@@ -66,10 +66,16 @@ const removeListenerBtn = document.querySelector(".js-remove-listener");
 
 targetBtn.addEventListener("click", onTargetButtonClick);
 
-function onTargetButtonClick(event, tupang) {
+function onTargetButtonClick(tupang) {
   event.preventDefault();
-  console.log("click-3");
-  console.log("event", event);
+  //   console.log("click-3");
+  //   console.log("event", tupang);
 
-  console.log("onTargetButtonClick ~ event.currentTarget", event.currentTarget);
+  console.log("onTargetButtonClick ~ tupang", tupang);
+
+  //   console.log("onTargetButtonClick ~ event.type", event.type);
+
+  //   console.log("onTargetButtonClick ~ event.currentTarget", event.currentTarget);
 }
+
+// ---------------------------------------------------------------------
