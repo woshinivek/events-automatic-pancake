@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -52,6 +52,77 @@
           <div class="form-field">
             <label for="pro">PRO</label>
             <input type="radio" name="subscription" id="pro" value="pro" />
+          </div>
+        </div>
+
+        <br />
+
+        <button type="submit" class="magic-button register">Register</button>
+      </form>
+    </div>
+
+    <script src="./js/02-form-submit-event.js" type="module"></script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Submit Event</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <p><a href="/index.html" class="index-list">Main page</a></p>
+
+    <div class="form-container">
+      <form class="js-register-form" autocomplete="off">
+        <div role="group">
+          <div class="form-field register">
+            <label class="register-form__label"
+              >Email
+              <input class="register-form__input" type="email" name="email" />
+            </label>
+          </div>
+
+          <div class="form-field register">
+            <label class="register-form__label"
+              >Password
+              <input
+                class="register-form__input"
+                type="password"
+                name="password"
+              />
+            </label>
+          </div>
+        </div>
+
+        <br />
+
+        <div role="group">
+          <h4>Subscription type</h4>
+
+          <div class="form-field">
+            <label
+              >Free
+              <input type="radio" name="subscription" value="free" />
+            </label>
+          </div>
+
+          <div class="form-field">
+            <label
+              >Basic
+              <input type="radio" name="subscription" value="basic" />
+            </label>
+          </div>
+
+          <div class="form-field">
+            <label
+              >PRO
+              <input type="radio" name="subscription" value="pro" />
+            </label>
           </div>
         </div>
 
