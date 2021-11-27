@@ -20,9 +20,9 @@ const removeListenerBtn = document.querySelector(".js-remove-listener");
 //   console.log("click-2");
 // };
 
-const onTargetButtonClick = () => {
-  console.log("click-3");
-};
+// const onTargetButtonClick = () => {
+//   console.log("click-3");
+// };
 
 // const onAddListenerBtnClick = () => {
 //   console.log("Click on add event listener btn");
@@ -34,14 +34,42 @@ const onTargetButtonClick = () => {
 
 // ---------------------------------------------------------------------
 
-addListenerBtn.addEventListener("click", () => {
-  console.log("added event listener on target btn");
+// addListenerBtn.addEventListener("click", () => {
+//   console.log("added event listener on target btn");
 
-  targetBtn.addEventListener("click", onTargetButtonClick);
-});
+//   targetBtn.addEventListener("click", onTargetButtonClick);
+// });
 
-removeListenerBtn.addEventListener("click", () => {
-  console.log("remove event listener from target btn");
+// removeListenerBtn.addEventListener("click", () => {
+//   console.log("remove event listener from target btn");
 
-  targetBtn.removeEventListener("click", onTargetButtonClick);
-});
+//   targetBtn.removeEventListener("click", onTargetButtonClick);
+// });
+
+// ---------------------------------------------------------------------
+
+// targetBtn.addEventListener("click", onTargetButtonClick);
+
+// function onTargetButtonClick(event, tupang) {
+//   event.preventDefault();
+//   console.log("click-3");
+//   console.log("event", event);
+//   tupang = 23;
+//   console.log("tupang", tupang);
+
+//   console.log("onTargetButtonClick ~ event.currentTarget", event.currentTarget);
+// }
+
+// console.dir(Event);
+
+// ---------------------------------------------------------------------
+
+targetBtn.addEventListener("click", onTargetButtonClick);
+
+function onTargetButtonClick(event, tupang) {
+  event.preventDefault();
+  console.log("click-3");
+  console.log("event", event);
+
+  console.log("onTargetButtonClick ~ event.currentTarget", event.currentTarget);
+}
