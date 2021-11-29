@@ -4,9 +4,9 @@
  *    - on*: onSubjectEvent
  */
 
-const targetBtn = document.querySelector(".js-target-btn");
-const addListenerBtn = document.querySelector(".js-add-listener");
-const removeListenerBtn = document.querySelector(".js-remove-listener");
+// const targetBtn = document.querySelector(".js-target-btn");
+// const addListenerBtn = document.querySelector(".js-add-listener");
+// const removeListenerBtn = document.querySelector(".js-remove-listener");
 
 // targetBtn.addEventListener("click", () => {
 //   console.log("click");
@@ -64,18 +64,35 @@ const removeListenerBtn = document.querySelector(".js-remove-listener");
 
 // ---------------------------------------------------------------------
 
-targetBtn.addEventListener("click", onTargetButtonClick);
+// targetBtn.addEventListener("click", onTargetButtonClick);
 
-function onTargetButtonClick(tupang) {
-  event.preventDefault();
-  //   console.log("click-3");
-  //   console.log("event", tupang);
+// function onTargetButtonClick(tupang) {
+//   event.preventDefault();
+//   //   console.log("click-3");
+//   //   console.log("event", tupang);
 
-  console.log("onTargetButtonClick ~ tupang", tupang);
+//   console.log("onTargetButtonClick ~ tupang", tupang);
 
-  //   console.log("onTargetButtonClick ~ event.type", event.type);
+//   //   console.log("onTargetButtonClick ~ event.type", event.type);
 
-  //   console.log("onTargetButtonClick ~ event.currentTarget", event.currentTarget);
-}
+//   console.log("onTargetButtonClick ~ event.currentTarget", event.currentTarget);
+// }
 
 // ---------------------------------------------------------------------
+
+const targetBtn = document.querySelector(".js-target-btn");
+const addListenerBtn = document.querySelector(".js-add-listener");
+const removeListenerBtn = document.querySelector(".js-remove-listener");
+
+addListenerBtn.addEventListener("click", onAddEventListenerBtnClick);
+removeListenerBtn.removeEventListener("click", onTargetBtnClick);
+
+function onTargetBtnClick() {
+  console.log("click on target btn");
+}
+
+function onAddEventListenerBtnClick() {
+  console.log("added event listener on target btn");
+
+  targetBtn.addEventListener("click", onTargetBtnClick);
+}
