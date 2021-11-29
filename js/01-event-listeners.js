@@ -84,15 +84,18 @@ const targetBtn = document.querySelector(".js-target-btn");
 const addListenerBtn = document.querySelector(".js-add-listener");
 const removeListenerBtn = document.querySelector(".js-remove-listener");
 
-addListenerBtn.addEventListener("click", onAddEventListenerBtnClick);
-removeListenerBtn.removeEventListener("click", onTargetBtnClick);
-
 function onTargetBtnClick() {
   console.log("click on target btn");
 }
 
-function onAddEventListenerBtnClick() {
-  console.log("added event listener on target btn");
+addListenerBtn.addEventListener("click", () => {
+  console.log("added event listener on target button");
 
   targetBtn.addEventListener("click", onTargetBtnClick);
-}
+});
+
+removeListenerBtn.addEventListener("click", () => {
+  console.log("remove event listener from target btn");
+
+  targetBtn.removeEventListener("click", onTargetBtnClick);
+});
