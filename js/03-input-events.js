@@ -1,6 +1,6 @@
 const refs = {
   input: document.querySelector(".js-input"),
-  license: document.querySelector(".js-button > span"),
+  licenseCheckbox: document.querySelector(".js-license"),
   nameLabel: document.querySelector(".js-button > span"),
   btn: document.querySelector(".js-button"),
 };
@@ -8,11 +8,16 @@ const refs = {
 // refs.input.addEventListener("focus", onInputFocus);
 
 refs.input.addEventListener("input", onInputChange);
+refs.licenseCheckbox.addEventListener("change", onLicenseChange);
 
 function onInputFocus(event) {
   console.log("Input got focus");
 }
 
 function onInputChange(event) {
-  console.log(event.currentTarget.value);
+  refs.nameLabel.textContent = event.currentTarget.value;
+}
+
+function onLicenseChange(event) {
+  refs.btn.disabled = !event.currentTarget.checked;
 }
