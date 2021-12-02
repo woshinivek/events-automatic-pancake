@@ -101,11 +101,16 @@ h4 {
   align-items: center;
   height: 250px;
   width: 250px;
-  background-color: royalblue;
+  background-color: rgb(65, 105, 225);
+  transition: background-color 200ms ease-in;
 }
 
 .inner-box {
   height: 100px;
   width: 100px;
   background-color: yellow;
+}
+
+.box--active {
+  background-color: rgb(65, 206, 225);
 }
