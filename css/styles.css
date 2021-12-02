@@ -94,3 +94,18 @@ h4 {
 .magic-btn-clicked {
   background-color: rgba(248, 160, 45, 0.9);
 }
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  width: 250px;
+  background-color: royalblue;
+}
+
+.inner-box {
+  height: 100px;
+  width: 100px;
+  background-color: yellow;
+}
