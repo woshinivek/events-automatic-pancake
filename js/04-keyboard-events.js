@@ -3,16 +3,18 @@ const refs = {
   output: document.querySelector(".js-output"),
 };
 
-window.addEventListener("keypress", onOutputChange);
+window.addEventListener("keydown", onKeydown);
 refs.btnClear.addEventListener("click", onClearOutput);
 
-function onOutputChange(event) {
-  console.log("code: ", event.code);
-  console.log("Key: ", event.key);
-
+function onKeydown(event) {
   refs.output.textContent += event.key;
+
+  console.log("event.code: ", event.code);
+  console.log("event.key: ", event.key);
 }
 
-function onClearOutput() {
+function onClearOutput(event) {
   refs.output.textContent = "";
+
+  //   location.reload();
 }
