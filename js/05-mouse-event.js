@@ -1,7 +1,8 @@
 const boxRef = document.querySelector(".js-box");
 
-boxRef.addEventListener("mouseenter", onMouseEnter);
-boxRef.addEventListener("mouseleave", onMouseLeave);
+boxRef.addEventListener("mouseover", onMouseEnter);
+boxRef.addEventListener("mouseout", onMouseLeave);
+// boxRef.addEventListener("mouseover", onMouseOver);
 
 function onMouseEnter(event) {
   const box = event.currentTarget;
@@ -11,4 +12,9 @@ function onMouseEnter(event) {
 function onMouseLeave(event) {
   const box = event.currentTarget;
   box.classList.remove("box--active");
+}
+
+function onMouseOver(event) {
+  const box = event.currentTarget;
+  //   box.classList.add("box--active");
 }
