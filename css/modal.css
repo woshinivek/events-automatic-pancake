@@ -8,6 +8,17 @@ body.show-modal .modal {
   transform: scale(1);
 }
 
+body.show-modal .hiddenEl {
+  opacity: 0;
+  visibility: hidden;
+
+  /* transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out; */
+}
+
+/* body.show-modal  {
+  opacity: 0;
+} */
+
 .backdrop {
   display: flex;
   justify-content: center;
