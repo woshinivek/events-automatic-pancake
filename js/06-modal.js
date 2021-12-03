@@ -2,18 +2,31 @@ const refs = {
   openBtn: document.querySelector('[data-action="open-modal"]'),
   closeBtn: document.querySelector('[data-action="close-modal"]'),
   backdrop: document.querySelector(".js-backdrop"),
-  //   body: document.querySelector("body"),
 };
 
 refs.openBtn.addEventListener("click", onModalOpen);
 refs.closeBtn.addEventListener("click", onModalClose);
+refs.backdrop.addEventListener("click", onBackdropClick);
 
-function onModalOpen(event) {
+function onModalOpen() {
+  window.addEventListener("keydown", onEscKey);
   document.body.classList.add("show-modal");
-  //   refs.body.classList.add("show-modal");
 }
 
-function onModalClose(event) {
+function onModalClose() {
+  window.removeEventListener("keydown", onEscKey);
   document.body.classList.remove("show-modal");
-  //   refs.body.classList.remove("show-modal");
+}
+
+function onBackdropClick(event) {
+  if (event.currentTarget === event.target) {
+    onModalClose();
+  }
+}
+
+function onEscKey(event) {
+  console.log(event.code);
+  if (event.code === "Escape") {
+    onModalClose();
+  }
 }
