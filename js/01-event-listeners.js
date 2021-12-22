@@ -80,22 +80,44 @@
 
 // ---------------------------------------------------------------------
 
+// const targetBtn = document.querySelector(".js-target-btn");
+// const addListenerBtn = document.querySelector(".js-add-listener");
+// const removeListenerBtn = document.querySelector(".js-remove-listener");
+
+// function onTargetBtnClick() {
+//   console.log("click on target btn");
+// }
+
+// addListenerBtn.addEventListener("click", () => {
+//   console.log("added event listener on target button");
+
+//   targetBtn.addEventListener("click", onTargetBtnClick);
+// });
+
+// removeListenerBtn.addEventListener("click", () => {
+//   console.log("remove event listener from target btn");
+
+//   targetBtn.removeEventListener("click", onTargetBtnClick);
+// });
+
+// ---------------------------------------------------------------------
+
 const targetBtn = document.querySelector(".js-target-btn");
 const addListenerBtn = document.querySelector(".js-add-listener");
 const removeListenerBtn = document.querySelector(".js-remove-listener");
 
 function onTargetBtnClick() {
-  console.log("click on target btn");
+  console.log("on target btn click");
 }
 
 addListenerBtn.addEventListener("click", () => {
-  console.log("added event listener on target button");
+  console.log("click on add listener btn");
 
   targetBtn.addEventListener("click", onTargetBtnClick);
 });
 
 removeListenerBtn.addEventListener("click", () => {
-  console.log("remove event listener from target btn");
+  console.log("click on remove listner btn");
 
   targetBtn.removeEventListener("click", onTargetBtnClick);
 });
