@@ -29,11 +29,13 @@ const btnRef = document.querySelector(".js-button");
 const inputRef = document.querySelector(".js-input");
 const licenseRef = document.querySelector(".js-license");
 const labelRef = document.querySelector(".js-button > span");
+const formRef = document.querySelector(".form-input-events");
 
 inputRef.addEventListener("focus", onFocusChange);
 inputRef.addEventListener("blur", onBlurChange);
 inputRef.addEventListener("input", onInputChange);
 licenseRef.addEventListener("change", onLicenseChange);
+formRef.addEventListener("submit", onFormSubmit);
 
 function onFocusChange(ev) {
   console.dir(ev.target);
@@ -54,6 +56,23 @@ function onLicenseChange(ev) {
   // console.dir(btnRef);
 
   btnRef.disabled = !ev.target.checked;
+}
+
+function onFormSubmit(ev) {
+  ev.preventDefault();
+
+  const formData = new FormData(ev.target);
+
+  const submittedData = {};
+
+  formData.forEach((value, key) => {
+    console.log("key: ", key);
+    console.log("value: ", value);
+
+    submittedData[key] = value;
+  });
+
+  console.log(submittedData);
 }
 
 // ---------------------------------------------------------------------
