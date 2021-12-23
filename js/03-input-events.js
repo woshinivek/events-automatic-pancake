@@ -30,16 +30,31 @@ const inputRef = document.querySelector(".js-input");
 const licenseRef = document.querySelector(".js-license");
 const labelRef = document.querySelector(".js-button > span");
 
-inputRef.addEventListener("input", (evt) => {
-  labelRef.textContent = evt.target.value;
-});
+inputRef.addEventListener("focus", onFocusChange);
+inputRef.addEventListener("blur", onBlurChange);
+inputRef.addEventListener("input", onInputChange);
+licenseRef.addEventListener("change", onLicenseChange);
 
-licenseRef.addEventListener("change", (evt) => {
-  console.dir(evt.target);
-  console.dir(btnRef);
+function onFocusChange(ev) {
+  console.dir(ev.target);
+  console.log("FOCUS");
+}
 
-  btnRef.disabled = !evt.target.checked;
-});
+function onBlurChange(ev) {
+  console.dir(ev.target);
+  console.log("BLUR");
+}
+
+function onInputChange(ev) {
+  labelRef.textContent = ev.target.value;
+}
+
+function onLicenseChange(ev) {
+  // console.dir(evt.target);
+  // console.dir(btnRef);
+
+  btnRef.disabled = !ev.target.checked;
+}
 
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
