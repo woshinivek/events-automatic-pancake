@@ -75,3 +75,17 @@
 
 const formRef = document.querySelector(".js-register-form");
 const registerBtnRef = document.querySelector(".magic-button");
+
+formRef.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const formElements = event.target.elements;
+
+  const formData = {
+    email: formElements.email.value,
+    password: formElements.password.value,
+    subscritpion: formElements.subscription.value,
+  };
+
+  console.log(formData);
+});
