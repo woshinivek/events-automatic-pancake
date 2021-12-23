@@ -73,19 +73,63 @@
 
 // -------------------------------------------------------------------
 
+// const formRef = document.querySelector(".js-register-form");
+// const registerBtnRef = document.querySelector(".magic-button");
+
+// formRef.addEventListener("submit", (event) => {
+//   event.preventDefault();
+
+//   const formElements = event.target.elements;
+
+//   const formData = {
+//     email: formElements.email.value,
+//     password: formElements.password.value,
+//     subscritpion: formElements.subscription.value,
+//   };
+
+//   console.log(formData);
+// });
+
+// -------------------------------------------------------------------
+// -------------------------------------------------------------------
+
+// const formRef = document.querySelector(".js-register-form");
+// const registerBtnRef = document.querySelector(".magic-button");
+
+// formRef.addEventListener("submit", (event) => {
+//   event.preventDefault();
+
+//   const formElements = event.target.elements;
+
+//   const formData = {
+//     email: formElements.email.value,
+//     password: formElements.password.value,
+//     subscritpion: formElements.subscription.value,
+//   };
+
+//   console.log(formData);
+// });
+
+// -------------------------------------------------------------------
+// -------------------------------------------------------------------
+
 const formRef = document.querySelector(".js-register-form");
 const registerBtnRef = document.querySelector(".magic-button");
 
 formRef.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const formElements = event.target.elements;
+  const formData = new FormData(event.target);
 
-  const formData = {
-    email: formElements.email.value,
-    password: formElements.password.value,
-    subscritpion: formElements.subscription.value,
-  };
+  const submittedData = {};
 
-  console.log(formData);
+  formData.forEach((value, key) => {
+    console.log("key: ", key);
+    console.log("value: ", value);
+
+    submittedData[key] = value;
+    // submittedData.key = value;
+  });
+
+  console.log(submittedData);
 });
