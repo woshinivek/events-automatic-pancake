@@ -102,24 +102,31 @@
 
 // ---------------------------------------------------------------------
 
-const targetBtn = document.querySelector(".js-target-btn");
-const addListenerBtn = document.querySelector(".js-add-listener");
-const removeListenerBtn = document.querySelector(".js-remove-listener");
+// const targetBtn = document.querySelector(".js-target-btn");
+// const addListenerBtn = document.querySelector(".js-add-listener");
+// const removeListenerBtn = document.querySelector(".js-remove-listener");
 
-function onTargetBtnClick() {
-  console.log("on target btn click");
-}
+// function onTargetBtnClick() {
+//   console.log("on target btn click");
+// }
 
-addListenerBtn.addEventListener("click", () => {
-  console.log("click on add listener btn");
+// addListenerBtn.addEventListener("click", () => {
+//   console.log("click on add listener btn");
 
-  targetBtn.addEventListener("click", onTargetBtnClick);
-});
+//   targetBtn.addEventListener("click", onTargetBtnClick);
+// });
 
-removeListenerBtn.addEventListener("click", () => {
-  console.log("click on remove listner btn");
+// removeListenerBtn.addEventListener("click", () => {
+//   console.log("click on remove listner btn");
 
-  targetBtn.removeEventListener("click", onTargetBtnClick);
-});
+//   targetBtn.removeEventListener("click", onTargetBtnClick);
+// });
 
 // ---------------------------------------------------------------------
+
+const targetBtn = document.querySelector(".js-target-btn");
+targetBtn.addEventListener("click", (evt) => {
+  evt.target.textContent = "STOP MFK!!!";
+
+  console.log(evt.currentTarget);
+});

@@ -61,12 +61,17 @@
 
 // -------------------------------------------------------------------
 
-const formEl = document.querySelector(".js-register-form");
+// const formEl = document.querySelector(".js-register-form");
 
-function onFormEvenLIstener(event) {
-  event.preventDefault();
+// function onFormEvenLIstener(event) {
+//   event.preventDefault();
 
-  // console.log(event.currentTarget);
-}
+//   // console.log(event.currentTarget);
+// }
 
-formEl.addEventListener("submit", onFormEvenLIstener);
+// formEl.addEventListener("submit", onFormEvenLIstener);
+
+// -------------------------------------------------------------------
+
+const formRef = document.querySelector(".js-register-form");
+const registerBtnRef = document.querySelector(".magic-button");
