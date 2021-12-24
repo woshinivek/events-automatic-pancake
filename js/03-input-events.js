@@ -25,54 +25,74 @@
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 
-const btnRef = document.querySelector(".js-button");
+// const btnRef = document.querySelector(".js-button");
+// const inputRef = document.querySelector(".js-input");
+// const licenseRef = document.querySelector(".js-license");
+// const labelRef = document.querySelector(".js-button > span");
+// const formRef = document.querySelector(".form-input-events");
+
+// inputRef.addEventListener("focus", onFocusChange);
+// inputRef.addEventListener("blur", onBlurChange);
+// inputRef.addEventListener("input", onInputChange);
+// licenseRef.addEventListener("change", onLicenseChange);
+// formRef.addEventListener("submit", onFormSubmit);
+
+// function onFocusChange(ev) {
+//   console.dir(ev.target);
+//   console.log("FOCUS");
+// }
+
+// function onBlurChange(ev) {
+//   console.dir(ev.target);
+//   console.log("BLUR");
+// }
+
+// function onInputChange(ev) {
+//   labelRef.textContent = ev.target.value;
+// }
+
+// function onLicenseChange(ev) {
+//   // console.dir(evt.target);
+//   // console.dir(btnRef);
+
+//   btnRef.disabled = !ev.target.checked;
+// }
+
+// function onFormSubmit(ev) {
+//   ev.preventDefault();
+
+//   const formData = new FormData(ev.target);
+
+//   const submittedData = {};
+
+//   formData.forEach((value, key) => {
+//     console.log("key: ", key);
+//     console.log("value: ", value);
+
+//     submittedData[key] = value;
+//   });
+
+//   console.log(submittedData);
+// }
+
+// ---------------------------------------------------------------------
+// ---------------------------------------------------------------------
+
 const inputRef = document.querySelector(".js-input");
 const licenseRef = document.querySelector(".js-license");
 const labelRef = document.querySelector(".js-button > span");
-const formRef = document.querySelector(".form-input-events");
+const btnRef = document.querySelector(".js-button");
 
-inputRef.addEventListener("focus", onFocusChange);
-inputRef.addEventListener("blur", onBlurChange);
 inputRef.addEventListener("input", onInputChange);
 licenseRef.addEventListener("change", onLicenseChange);
-formRef.addEventListener("submit", onFormSubmit);
-
-function onFocusChange(ev) {
-  console.dir(ev.target);
-  console.log("FOCUS");
-}
-
-function onBlurChange(ev) {
-  console.dir(ev.target);
-  console.log("BLUR");
-}
 
 function onInputChange(ev) {
   labelRef.textContent = ev.target.value;
 }
 
 function onLicenseChange(ev) {
-  // console.dir(evt.target);
-  // console.dir(btnRef);
-
+  console.dir(ev.target);
   btnRef.disabled = !ev.target.checked;
-}
-
-function onFormSubmit(ev) {
-  ev.preventDefault();
-
-  const formData = new FormData(ev.target);
-
-  const submittedData = {};
-
-  formData.forEach((value, key) => {
-    console.log("key: ", key);
-    console.log("value: ", value);
-
-    submittedData[key] = value;
-  });
-
-  console.log(submittedData);
 }
 
 // ---------------------------------------------------------------------
