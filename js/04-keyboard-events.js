@@ -19,27 +19,30 @@
 //   //   location.reload();
 // }
 
-const refs = {
-  clearBtn: document.querySelector(".js-clear"),
-  output: document.querySelector(".js-output"),
-};
+// const refs = {
+//   clearBtn: document.querySelector(".js-clear"),
+//   output: document.querySelector(".js-output"),
+// };
 
-window.addEventListener("keypress", onKeyPress);
-// window.addEventListener("keydown", onKeyDown);
+// window.addEventListener("keypress", onKeyPress);
+// // window.addEventListener("keydown", onKeyDown);
 
-refs.clearBtn.addEventListener("click", onClearOutput);
+// refs.clearBtn.addEventListener("click", onClearOutput);
 
-function onKeyPress(event) {
-  console.log(event);
-  refs.output.textContent += event.key;
-}
-
-// function onKeyDown(event) {
+// function onKeyPress(event) {
 //   console.log(event);
 //   refs.output.textContent += event.key;
 // }
 
-function onClearOutput(event) {
-  refs.output.textContent = "";
-  location.reload();
-}
+// // function onKeyDown(event) {
+// //   console.log(event);
+// //   refs.output.textContent += event.key;
+// // }
+
+// function onClearOutput(event) {
+//   refs.output.textContent = "";
+//   location.reload();
+// }
+
+// -------------------------------------------------------------------
+// -------------------------------------------------------------------
