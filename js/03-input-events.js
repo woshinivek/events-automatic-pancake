@@ -85,6 +85,8 @@ const btnRef = document.querySelector(".js-button");
 
 inputRef.addEventListener("input", onInputChange);
 licenseRef.addEventListener("change", onLicenseChange);
+inputRef.addEventListener("focus", onInputFocus);
+inputRef.addEventListener("blur", onInputBlur);
 
 function onInputChange(ev) {
   labelRef.textContent = ev.target.value;
@@ -93,6 +95,14 @@ function onInputChange(ev) {
 function onLicenseChange(ev) {
   console.dir(ev.target);
   btnRef.disabled = !ev.target.checked;
+}
+
+function onInputFocus() {
+  console.log("IN FOCUS!");
+}
+
+function onInputBlur() {
+  console.log("IN BLUR!");
 }
 
 // ---------------------------------------------------------------------
