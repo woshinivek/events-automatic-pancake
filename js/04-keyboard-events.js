@@ -46,3 +46,23 @@
 
 // -------------------------------------------------------------------
 // -------------------------------------------------------------------
+
+window.addEventListener("keydown", onKeyDown);
+window.addEventListener("keyup", onKeyUp);
+
+function onKeyDown(ev) {
+  document.body.classList.add("show-backdrop");
+  // console.dir(ev.target);
+}
+
+function onKeyUp() {
+  document.body.classList.remove("show-backdrop");
+  // location.reload();
+}
+
+console.dir(document.body);
+
+// console.log(document.body.innerHTML);
+
+// -------------------------------------------------------------------
+// -------------------------------------------------------------------
