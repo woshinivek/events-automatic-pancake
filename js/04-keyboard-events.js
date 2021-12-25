@@ -47,22 +47,41 @@
 // -------------------------------------------------------------------
 // -------------------------------------------------------------------
 
-window.addEventListener("keydown", onKeyDown);
-window.addEventListener("keyup", onKeyUp);
+// window.addEventListener("keydown", onKeyDown);
+// window.addEventListener("keyup", onKeyUp);
 
-function onKeyDown(ev) {
-  document.body.classList.add("show-backdrop");
-  // console.dir(ev.target);
-}
+// function onKeyDown(ev) {
+//   document.body.classList.add("show-backdrop");
+//   // console.dir(ev.target);
+// }
 
-function onKeyUp() {
-  document.body.classList.remove("show-backdrop");
-  // location.reload();
-}
+// function onKeyUp() {
+//   document.body.classList.remove("show-backdrop");
+//   // location.reload();
+// }
 
-console.dir(document.body);
+// console.dir(document.body);
 
 // console.log(document.body.innerHTML);
+
+// -------------------------------------------------------------------
+// -------------------------------------------------------------------
+
+const refs = {
+  clearBtn: document.querySelector(".js-clear"),
+  otputRef: document.querySelector(".js-output"),
+};
+
+window.addEventListener("keypress", onKeyPress);
+refs.clearBtn.addEventListener("click", onClearBtn);
+
+function onKeyPress(ev) {
+  refs.otputRef.textContent += ev.key;
+}
+
+function onClearBtn() {
+  refs.otputRef.textContent = "";
+}
 
 // -------------------------------------------------------------------
 // -------------------------------------------------------------------
