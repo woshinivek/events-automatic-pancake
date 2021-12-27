@@ -8,19 +8,19 @@ body.show-modal .modal {
   transform: scale(1);
 }
 
-body.show-modal .hiddenEl {
+/* body.show-modal .hiddenEl {
   opacity: 0;
   visibility: hidden;
 
-  /* transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out; */
-}
+  transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+} */
 
-body.show-modal .message {
+/* body.show-modal .message {
   position: relative;
   opacity: 1;
   visibility: visible;
   pointer-events: initial;
-}
+} */
 
 .container {
   max-width: 1240px;
