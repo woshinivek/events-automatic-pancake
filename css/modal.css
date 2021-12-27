@@ -31,14 +31,14 @@ body.show-modal .message {
   opacity: 0;
 } */
 
-.message {
+/* .message {
   position: absolute;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 
   font-size: 58px;
-}
+} */
 
 .backdrop {
   display: flex;

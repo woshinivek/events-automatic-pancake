@@ -128,11 +128,12 @@ body.show-backdrop .backdrop {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: pink;
+  text-align: center;
+  background-color: rgba(255, 192, 203, 0.5);
   z-index: 23;
   pointer-events: none;
   visibility: hidden;
-  opacity: 1;
+  opacity: 0;
 }
 
 .backdrop-msg {
