@@ -10,6 +10,33 @@
   <body>
     <div class="container">
       <p class="hiddenEl"><a href="/">На главную</a></p>
-    </div>
+
+      <div id="colors">
+        <p class="description">
+          Выберите цвет футболки
+          <span class="color-preview js-color-preview"></span>
+        </p>
+
+        <button class="btn" data-color="#f44336">Красный</button>
+        <button class="btn" data-color="#ffeb3b">Желтый</button>
+        <button class="btn" data-color="#4caf50">Зелёный</button>
+        <button class="btn" data-color="#2196f3">Синий</button>
+      </div>
+
+      <div id="actions">
+        <p>Что делаем с этим заказом?</p>
+        <button class="btn" data-action="approve">Подтвердить</button>
+        <button class="btn" data-action="edit">Редактировать</button>
+        <button class="btn" data-action="delete">Удалить</button>
+      </div>
+
+      <!-- <div class="vasyaok">
+        <span class="vasya"></span>
+        <span class="vasya"></span>
+        <span class="vasya"></span>
+      </div>
+    </div> -->
+
+    <script src="/js/07-extra-dataset.js" type="module"></script>
   </body>
 </html>

@@ -140,3 +140,30 @@ body.show-backdrop .backdrop {
   font-size: 70px;
   color: black;
 }
+
+.description {
+  display: flex;
+  align-items: center;
+}
+
+.color-preview {
+  width: 48px;
+  height: 48px;
+  margin-left: 8px;
+  border: 1px solid #424242;
+  border-radius: 4px;
+}
+
+/* .vasyaok {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 5px;
+  width: 150px;
+}
+
+.vasya {
+  border: 1px solid green;
+  width: 30px;
+  height: 30px;
+} */
