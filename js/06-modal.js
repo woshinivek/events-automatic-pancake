@@ -76,31 +76,30 @@ const refs = {
   backdrop: document.querySelector(".js-backdrop"),
 };
 
-refs.openModalBtn.addEventListener("click", onOpenModalButton);
-refs.closeModalBtn.addEventListener("click", onCloseModalBtn);
+refs.openModalBtn.addEventListener("click", onOpenModal);
+refs.closeModalBtn.addEventListener("click", onCloseModal);
 refs.backdrop.addEventListener("click", onBackdropClick);
 
-function onOpenModalButton(ev) {
+function onOpenModal(ev) {
   document.body.classList.add("show-modal");
+
   window.addEventListener("keydown", onEscKey);
 }
 
-function onCloseModalBtn(ev) {
+function onCloseModal(ev) {
   document.body.classList.remove("show-modal");
+  
   window.removeEventListener("keydown", onEscKey);
 }
 
 function onBackdropClick(ev) {
-  // console.log("ev target: ", ev.target);
-  // console.log("ev currentTarget: ", ev.currentTarget);
-
   if (ev.target === ev.currentTarget) {
-    document.body.classList.remove("show-modal");
+    onCloseModal();
   }
 }
 
 function onEscKey(ev) {
   if (ev.code === "Escape") {
-    document.body.classList.remove("show-modal");
+    onCloseModal();
   }
 }
