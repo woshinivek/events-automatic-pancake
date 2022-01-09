@@ -4,14 +4,14 @@ const actionButtons = document.querySelectorAll("button[data-action]");
 const outputRef = document.querySelector(".js-output");
 
 colorButtons.forEach((button) =>
-  button.addEventListener("click", onChooseBtnClick)
+  button.addEventListener("click", onChooseColorBtn)
 );
 
 actionButtons.forEach((button) =>
   button.addEventListener("click", onActionBtnClick)
 );
 
-function onChooseBtnClick(evt) {
+function onChooseColorBtn(evt) {
   const element = evt.target;
   colorPrewievRef.style.backgroundColor = element.dataset.color;
 }
