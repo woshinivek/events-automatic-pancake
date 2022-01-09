@@ -12,7 +12,7 @@ actionButtons.forEach((button) =>
 );
 
 function onChooseColorBtn(evt) {
-  const element = evt.target;
+  const element = evt.currentTarget;
   colorPrewievRef.style.backgroundColor = element.dataset.color;
 }
 
