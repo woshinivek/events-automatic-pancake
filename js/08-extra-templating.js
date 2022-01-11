@@ -44,3 +44,21 @@ import vehicles from "./vehicles.js";
 
 // -------------------------------------------------------------------
 // -------------------------------------------------------------------
+
+const carsListContainer = document.querySelector(".js-cars-list");
+
+const carsListItemTemplate = ({ make, model, type, price }) => {
+  return `
+    <li class="cars-list__item">
+         <p>Производитель: ${make}</p>
+         <p>Модель: ${model}</p>
+         <p>Тип: ${type}</p>
+         <p>Цена: ${price}</p>
+    </li> `;
+};
+
+// carsListContainer.insertAdjacentHTML("beforeend", carsListItemTemplate);
+
+const carsMarkup = vehicles.map(carsListItemTemplate).join("");
+
+carsListContainer.insertAdjacentHTML("beforeend", carsMarkup);
