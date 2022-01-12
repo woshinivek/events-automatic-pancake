@@ -62,3 +62,6 @@ const carsListItemTemplate = ({ make, model, type, price }) => {
 const carsMarkup = vehicles.map(carsListItemTemplate).join("");
 
 carsListContainer.insertAdjacentHTML("beforeend", carsMarkup);
+
+// -------------------------------------------------------------------
+// -------------------------------------------------------------------
