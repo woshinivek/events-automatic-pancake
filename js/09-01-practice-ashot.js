@@ -15,13 +15,29 @@ import cars from "./vehicles.js";
  а не четные в синим цветом.
 */
 
-const array = [];
-
-// const constainerRef = document.querySelector(".container");
+const parrentContainer = document.getElementById("container");
 const ulRef = document.createElement("ul");
+
+cars.forEach(({ make, model }, index) => {
+  const liItem = document.createElement("li");
+  liItem.textContent = `${make}: ${model}`;
+
+  //   if ((index + 1) % 2 === 0) {
+  //     liItem.classList.add("even");
+  //   }
+
+  //   if ((index + 1) % 2 === 1) {
+  //     liItem.classList.add("odd");
+  //   }
+
+  (index + 1) % 2 === 0
+    ? liItem.classList.add("even")
+    : liItem.classList.add("odd");
+
+  ulRef.append(liItem);
+});
 
 ulRef.id = "carsContainer";
 
-// constainerRef.append(ulRef);
-
-document.body.firstElementChild.append(ulRef);
+// document.body.firstElementChild.append(ulRef);
+parrentContainer.append(ulRef);
