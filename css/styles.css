@@ -186,3 +186,11 @@ body.show-backdrop .backdrop {
   text-align: center;
   /* margin-top: 10px; */
 }
+
+.even {
+  color: red;
+}
+
+.odd {
+  color: blue;
+}
