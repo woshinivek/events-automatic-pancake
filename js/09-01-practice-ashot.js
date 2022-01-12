@@ -17,9 +17,11 @@ import cars from "./vehicles.js";
 
 const array = [];
 
-const constainerRef = document.querySelector(".container");
+// const constainerRef = document.querySelector(".container");
 const ulRef = document.createElement("ul");
 
 ulRef.id = "carsContainer";
 
-constainerRef.append(ulRef);
+// constainerRef.append(ulRef);
+
+document.body.firstElementChild.append(ulRef);
