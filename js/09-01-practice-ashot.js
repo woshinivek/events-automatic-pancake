@@ -1,3 +1,5 @@
+import cars from "./vehicles.js";
+
 /* 
 1. С использованием значений массива создать 
 маркированный список.
@@ -13,10 +15,11 @@
  а не четные в синим цветом.
 */
 
-const array = ["Toyota", "Bmw", " Aston Martin"];
+const array = [];
 
 const constainerRef = document.querySelector(".container");
 const ulRef = document.createElement("ul");
+
 ulRef.id = "carsContainer";
 
 constainerRef.append(ulRef);
