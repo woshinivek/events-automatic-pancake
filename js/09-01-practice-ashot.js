@@ -15,20 +15,25 @@ import cars from "./vehicles.js";
  а не четные в синим цветом.
 */
 
-const parrentContainer = document.getElementById("container");
+const parrentContainerRef = document.getElementById("container");
+
 const ulRef = document.createElement("ul");
+ulRef.id = "cars-container";
+
+const btnContainer = document.createElement("div");
+btnContainer.id = "btn-container";
+
+const createBtnRef = document.createElement("button");
+createBtnRef.classList.add("js-create-btn");
+createBtnRef.textContent = "CREATE";
+
+const removeBtnRef = document.createElement("button");
+removeBtnRef.classList.add("js-remove-btn");
+removeBtnRef.textContent = "REMOVE";
 
 cars.forEach(({ make, model }, index) => {
   const liItem = document.createElement("li");
   liItem.textContent = `${make}: ${model}`;
-
-  //   if ((index + 1) % 2 === 0) {
-  //     liItem.classList.add("even");
-  //   }
-
-  //   if ((index + 1) % 2 === 1) {
-  //     liItem.classList.add("odd");
-  //   }
 
   (index + 1) % 2 === 0
     ? liItem.classList.add("even")
@@ -37,7 +42,7 @@ cars.forEach(({ make, model }, index) => {
   ulRef.append(liItem);
 });
 
-ulRef.id = "carsContainer";
-
 // document.body.firstElementChild.append(ulRef);
-parrentContainer.append(ulRef);
+parrentContainerRef.append(ulRef);
+btnContainer.append(createBtnRef, removeBtnRef);
+parrentContainerRef.append(btnContainer);
