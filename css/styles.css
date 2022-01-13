@@ -18,10 +18,6 @@ ul {
   list-style: none;
 }
 
-button {
-  cursor: pointer;
-}
-
 .container {
   width: 1200px;
   padding-right: 15px;
@@ -197,4 +193,10 @@ body.show-backdrop .backdrop {
 
 .odd {
   color: blue;
+}
+
+#btn-container {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
 }
