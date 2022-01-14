@@ -31,6 +31,13 @@ const removeBtnRef = document.createElement("button");
 removeBtnRef.classList.add("js-remove-btn");
 removeBtnRef.textContent = "REMOVE";
 
+const inputRef = document.createElement("input");
+inputRef.classList.add("input", "js-input");
+inputRef.placeholder = `Enter make and model`;
+inputRef.style.marginBottom = "10px";
+
+createBtnRef.addEventListener("click", onCreateBtnClick);
+
 cars.forEach(({ make, model }, index) => {
   const liItem = document.createElement("li");
   liItem.textContent = `${make}: ${model}`;
@@ -42,7 +49,14 @@ cars.forEach(({ make, model }, index) => {
   ulRef.append(liItem);
 });
 
+function onCreateBtnClick(evt) {
+  const newLiItem = document.createElement("li");
+  newLiItem.textContent = inputRef.value;
+
+  ulRef.appendChild(newLiItem);
+}
+
 // document.body.firstElementChild.append(ulRef);
-parrentContainerRef.append(ulRef);
+parrentContainerRef.append(ulRef, inputRef);
 btnContainer.append(createBtnRef, removeBtnRef);
 parrentContainerRef.append(btnContainer);

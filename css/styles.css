@@ -195,8 +195,13 @@ body.show-backdrop .backdrop {
   color: blue;
 }
 
+.input {
+  width: 200px;
+}
+
 #btn-container {
   display: flex;
   justify-content: space-between;
-  width: 200px;
+
+  width: 208px;
 }
