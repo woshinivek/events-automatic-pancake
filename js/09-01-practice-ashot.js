@@ -17,7 +17,7 @@ import cars from "./vehicles.js";
 
 const parrentContainerRef = document.getElementById("container");
 
-const ulRef = document.createElement("ul");
+const ulRef = document.createElement("ol");
 ulRef.id = "cars-container";
 
 const btnContainer = document.createElement("div");
@@ -37,6 +37,7 @@ inputRef.placeholder = `Enter make and model`;
 inputRef.style.marginBottom = "10px";
 
 createBtnRef.addEventListener("click", onCreateBtnClick);
+removeBtnRef.addEventListener("click", onButtonRemoveClick);
 
 cars.forEach(({ make, model }, index) => {
   const liItem = document.createElement("li");
@@ -52,8 +53,17 @@ cars.forEach(({ make, model }, index) => {
 function onCreateBtnClick(evt) {
   const newLiItem = document.createElement("li");
   newLiItem.textContent = inputRef.value;
+  inputRef.value = "";
+
+  ulRef.children.length % 2 === 0
+    ? newLiItem.classList.add("odd")
+    : newLiItem.classList.add("even");
 
   ulRef.appendChild(newLiItem);
+}
+
+function onButtonRemoveClick(evt) {
+  ulRef.lastElementChild.remove();
 }
 
 // document.body.firstElementChild.append(ulRef);
