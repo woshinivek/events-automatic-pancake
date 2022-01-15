@@ -15,151 +15,132 @@ import cars from "./vehicles.js";
  а не четные в синим цветом.
 */
 
-const parrentContainerRef = document.getElementById("container");
+// const parrentContainerRef = document.getElementById("container");
 
-const ulRef = document.createElement("ol");
-ulRef.id = "cars-container";
+// const ulRef = document.createElement("ol");
+// ulRef.id = "cars-container";
 
-const btnContainer = document.createElement("div");
-btnContainer.id = "btn-container";
+// const btnContainer = document.createElement("div");
+// btnContainer.id = "btn-container";
 
-const createBtnRef = document.createElement("button");
-createBtnRef.classList.add("js-create-btn");
-createBtnRef.textContent = "CREATE";
+// const createBtnRef = document.createElement("button");
+// createBtnRef.classList.add("js-create-btn");
+// createBtnRef.textContent = "CREATE";
 
-const removeBtnRef = document.createElement("button");
-removeBtnRef.classList.add("js-remove-btn");
-removeBtnRef.textContent = "REMOVE";
+// const removeBtnRef = document.createElement("button");
+// removeBtnRef.classList.add("js-remove-btn");
+// removeBtnRef.textContent = "REMOVE";
 
-const inputRef = document.createElement("input");
-inputRef.classList.add("input", "js-input");
-inputRef.placeholder = `Enter make and model`;
-inputRef.style.marginBottom = "10px";
+// const inputRef = document.createElement("input");
+// inputRef.classList.add("input", "js-input");
+// inputRef.style.marginBottom = "10px";
+// inputRef.placeholder = `Enter make and model`;
 
-createBtnRef.addEventListener("click", onCreateBtnClick);
-removeBtnRef.addEventListener("click", onButtonRemoveClick);
+// createBtnRef.addEventListener("click", onCreateBtnClick);
+// removeBtnRef.addEventListener("click", onButtonRemoveClick);
 
-cars.forEach(({ make, model }, index) => {
-  const liItem = document.createElement("li");
-  liItem.textContent = `${make}: ${model}`;
+// cars.forEach(({ make, model }, index) => {
+//   const liItem = document.createElement("li");
+//   liItem.textContent = `${make}: ${model}`;
 
-  (index + 1) % 2 === 0
-    ? liItem.classList.add("even")
-    : liItem.classList.add("odd");
+//   (index + 1) % 2 === 0
+//     ? liItem.classList.add("even")
+//     : liItem.classList.add("odd");
 
-  ulRef.append(liItem);
-});
+//   ulRef.append(liItem);
+// });
 
-function onCreateBtnClick(evt) {
-  const newLiItem = document.createElement("li");
-  if (inputRef.value !== "") {
-    newLiItem.textContent = inputRef.value;
-  }
+// function onCreateBtnClick(evt) {
+//   const newLiItem = document.createElement("li");
+//   if (inputRef.value !== "") {
+//     newLiItem.textContent = inputRef.value;
+//   }
 
-  if (inputRef.value === "") {
-    window.alert("тута");
-    return;
-  }
+//   if (inputRef.value === "") {
+//     window.alert("тута");
+//     return;
+//   }
 
-  inputRef.value = "";
+//   inputRef.value = "";
 
-  ulRef.children.length % 2 === 0
-    ? newLiItem.classList.add("odd")
-    : newLiItem.classList.add("even");
+//   ulRef.children.length % 2 === 0
+//     ? newLiItem.classList.add("odd")
+//     : newLiItem.classList.add("even");
 
-  ulRef.appendChild(newLiItem);
-}
+//   ulRef.appendChild(newLiItem);
+// }
 
-function onButtonRemoveClick(evt) {
-  ulRef.lastElementChild.remove();
-}
+// function onButtonRemoveClick(evt) {
+//   ulRef.lastElementChild.remove();
+// }
 
 // document.body.firstElementChild.append(ulRef);
-parrentContainerRef.append(ulRef, inputRef);
-btnContainer.append(createBtnRef, removeBtnRef);
-parrentContainerRef.append(btnContainer);
+// btnContainer.append(createBtnRef, removeBtnRef);
+// parrentContainerRef.append(ulRef, inputRef, btnContainer);
 
 // --------------------------------------------------
 // --------------------------------------------------
 
-// const cars = ["Mercedes", "BMW", "Volvo"];
+const parentContainerRef = document.getElementById("container");
 
-// const ulList = document.createElement("ul");
+const ulListRef = document.createElement("ul");
+ulListRef.id = "carsContainer";
 
-// ulList.id = "carsContainer";
+const buttonContainerRef = document.createElement("div");
+buttonContainerRef.id = "buttonContainer";
 
-// const parentContainer = document.getElementById("container");
+const addInputRef = document.createElement("input");
+addInputRef.id = "addInput";
+addInputRef.style.display = "block";
+addInputRef.style.marginBottom = "10px";
 
-// parentContainer.append(ulList);
+const btnAddRef = document.createElement("button");
+btnAddRef.style.marginRight = "10px";
+btnAddRef.textContent = "Добавить";
 
-// const renderPage = (newItem = null) => {
-//   if (newItem) {
-//     const carsContainer = document.getElementById("carsContainer");
-//     const newItemLi = document.createElement("li");
-//     newItemLi.textContent = newItem;
-//     newItemLi.classList.add((cars.length - 1) % 2 === 0 ? "even" : "odd");
-//     carsContainer.appendChild(newItemLi);
-//   } else {
-//     cars.forEach((car, index) => {
-//       const liItem = document.createElement("li");
-//       liItem.textContent = car;
-//       if (index % 2 === 0) {
-//         liItem.classList.add("even");
-//       } else {
-//         liItem.classList.add("odd");
-//       }
+const btnRemoveRef = document.createElement("button");
+btnRemoveRef.textContent = "Удалить";
 
-//       ulList.append(liItem);
-//     });
-//   }
-// };
+const renderPage = (newItem = null) => {
+  if (newItem) {
+    const carsContainer = document.getElementById("carsContainer");
+    const newItemLi = document.createElement("li");
+    newItemLi.textContent = newItem;
+    newItemLi.classList.add((cars.length - 1) % 2 === 0 ? "even" : "odd");
+    carsContainer.appendChild(newItemLi);
+  } else {
+    cars.forEach((car, index) => {
+      const liItem = document.createElement("li");
+      liItem.textContent = car;
+      if (index % 2 === 0) {
+        liItem.classList.add("even");
+      } else {
+        liItem.classList.add("odd");
+      }
 
-// renderPage();
+      ulList.append(liItem);
+    });
+  }
+};
 
-// const buttonContainer = document.createElement("div");
+renderPage();
 
-// // buttonContainer.setAttribute("id", "btnContainer");
-// buttonContainer.id = "btnContainer";
+btnAdd.addEventListener("click", (event) => {
+  const input = document.getElementById("addInput");
+  if (input.value) {
+    cars.push(input.value);
+    renderPage(input.value);
+    input.value = "";
+  }
+});
 
-// parentContainer.append(buttonContainer);
+btnRemove.addEventListener("click", () => {
+  const ulList = document.getElementById("carsContainer");
+  ulList.removeChild(ulList.lastElementChild);
+});
 
-// const btnContainer = document.getElementById("btnContainer");
-
-// const addInput = document.createElement("input");
-
-// addInput.id = "addInput";
-
-// btnContainer.append(addInput);
-
-// addInput.style.display = "block";
-// addInput.style.marginBottom = "10px";
-
-// const btnAdd = document.createElement("button");
-
-// btnContainer.append(btnAdd);
-
-// btnAdd.style.marginRight = "10px";
-
-// btnAdd.textContent = "Добавить";
-
-// const btnRemove = document.createElement("button");
-
-// btnContainer.append(btnRemove);
-// btnRemove.textContent = "Удалить";
-
-// btnAdd.addEventListener("click", (event) => {
-//   const input = document.getElementById("addInput");
-//   if (input.value) {
-//     cars.push(input.value);
-//     renderPage(input.value);
-//     input.value = "";
-//   }
-// });
-
-// btnRemove.addEventListener("click", () => {
-//   const ulList = document.getElementById("carsContainer");
-//   ulList.removeChild(ulList.lastElementChild);
-// });
+buttonContainerRef.append(addInputRef, btnAddRef, btnRemoveRef);
+parentContainerRef.append(ulListRef, buttonContainerRef);
 
 // // --------------------------------------------------
 // // --------------------------------------------------
