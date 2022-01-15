@@ -105,7 +105,9 @@ const renderPage = (newItem = null) => {
   if (newItem) {
     const newItemLi = document.createElement("li");
     newItemLi.textContent = newItem;
-    newItemLi.classList.add((cars.length - 1) % 2 === 0 ? "even" : "odd");
+    newItemLi.classList.add(
+      ulListRef.children.length % 2 === 0 ? "even" : "odd"
+    );
 
     ulListRef.appendChild(newItemLi);
   } else {
@@ -127,15 +129,14 @@ renderPage();
 
 btnAddRef.addEventListener("click", (event) => {
   if (addInputRef.value) {
-    cars.push(addInputRef.value);
+    // cars.push(addInputRef.value);
     renderPage(addInputRef.value);
     addInputRef.value = "";
   }
 });
 
 btnRemoveRef.addEventListener("click", () => {
-  const ulList = document.getElementById("carsContainer");
-  ulList.removeChild(ulList.lastElementChild);
+  ulListRef.removeChild(ulListRef.lastElementChild);
 });
 
 buttonContainerRef.append(addInputRef, btnAddRef, btnRemoveRef);
