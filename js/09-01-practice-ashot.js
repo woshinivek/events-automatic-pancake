@@ -103,38 +103,37 @@ btnRemoveRef.textContent = "Удалить";
 
 const renderPage = (newItem = null) => {
   if (newItem) {
-    const carsContainer = document.getElementById("carsContainer");
     const newItemLi = document.createElement("li");
     newItemLi.textContent = newItem;
     newItemLi.classList.add((cars.length - 1) % 2 === 0 ? "even" : "odd");
-    carsContainer.appendChild(newItemLi);
+
+    ulListRef.appendChild(newItemLi);
   } else {
-    cars.forEach((car, index) => {
+    cars.forEach(({ make, model }, index) => {
       const liItem = document.createElement("li");
-      liItem.textContent = car;
+      liItem.textContent = `${make}: ${model}`;
       if (index % 2 === 0) {
         liItem.classList.add("even");
       } else {
         liItem.classList.add("odd");
       }
 
-      ulList.append(liItem);
+      ulListRef.append(liItem);
     });
   }
 };
 
 renderPage();
 
-btnAdd.addEventListener("click", (event) => {
-  const input = document.getElementById("addInput");
-  if (input.value) {
-    cars.push(input.value);
-    renderPage(input.value);
-    input.value = "";
+btnAddRef.addEventListener("click", (event) => {
+  if (addInputRef.value) {
+    cars.push(addInputRef.value);
+    renderPage(addInputRef.value);
+    addInputRef.value = "";
   }
 });
 
-btnRemove.addEventListener("click", () => {
+btnRemoveRef.addEventListener("click", () => {
   const ulList = document.getElementById("carsContainer");
   ulList.removeChild(ulList.lastElementChild);
 });
