@@ -11,7 +11,35 @@
     <div class="container">
       <div id="container">
         <p><a href="/index.html">Back to the main page</a></p>
+
+        <form>
+          <label for="login">LogIn</label>
+          <input type="text" id="login" />
+          <div id="loginInfo">Not less than 4 characters</div>
+
+          <label for="password">Password</label>
+          <input type="password" id="password" />
+          <div id="passwordInfo">From 8 to 30 characters</div>
+
+          <label for="Agree">I agree the rules</label>
+          <input type="checkbox" name="agree" />
+
+          <button type="submit" id="submitButton">Submit</button>
+        </form>
       </div>
     </div>
   </body>
 </html>
+
+<!-- <form>
+    <label>Логин</label>
+    <input id="login" style="display: block;" autocomplete="off" />
+    <div id="loginInfo" style="display: none;">Минимум 4 символа</div>
+    <label>Пароль</label>
+    <input id="password" type="password" style="display: block;" />
+    <div id="passwordInfo" style="display: none;">От 8-30 символов</div>
+    <label for="agree">Я ознакомил(ся/ась) с правилами обработки персональных данных</label>
+    <input id="checkBox" type="checkbox" name="agree"  />
+    <button type="submit" id="submitButton" style="display: block;">Войти</button>
+    <div id='msgBox'></div>
+</form> -->
