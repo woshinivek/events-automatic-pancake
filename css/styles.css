@@ -199,6 +199,14 @@ body.show-backdrop .backdrop {
   width: 200px;
 }
 
+.error {
+  border-color: red;
+}
+
+.passed {
+  border-color: green;
+}
+
 #btn-container {
   display: flex;
   justify-content: space-between;

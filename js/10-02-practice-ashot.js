@@ -14,6 +14,7 @@
 
 const refs = {
   loginInput: document.getElementById("login"),
+  logInfo: document.querySelector("#loginInfo"),
   passwordInput: document.querySelector("#password"),
   checkbox: document.getElementById("checkbox"),
   submitBtn: document.querySelector("#submitBtn"),
@@ -21,11 +22,36 @@ const refs = {
 };
 
 refs.loginInput.addEventListener("blur", onLoginBlur);
+refs.passwordInput.addEventListener("blur", onPasswordBlur);
 
 function onLoginBlur(evt) {
-  Number(evt.currentTarget.value.length) < 4
-    ? console.log("hi, add more")
-    : console.log("Ok Good");
+  let value = evt.currentTarget.value;
 
-  evt.currentTarget.value = "";
+  if (value.length < 4) {
+    console.log("hi, add more");
+    refs.loginInput.classList.add("error");
+
+    return;
+  } else {
+    console.log("Ok Good");
+    refs.loginInput.classList.remove("error");
+  }
+
+  value = "";
+}
+
+function onPasswordBlur(evt) {
+  let value = evt.currentTarget.value;
+
+  if (value.length < 8) {
+    console.log("hi, add more");
+    refs.passwordInput.classList.add("error");
+
+    return;
+  } else {
+    console.log("Ok Good");
+    refs.passwordInput.classList.remove("error");
+  }
+
+  value = "";
 }
