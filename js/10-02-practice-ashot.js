@@ -16,19 +16,28 @@ const refs = {
   loginInput: document.getElementById("login"),
   logInfo: document.querySelector("#loginInfo"),
   passwordInput: document.querySelector("#password"),
+  passwordInfo: document.querySelector("#passwordInfo"),
   checkbox: document.getElementById("checkbox"),
   submitBtn: document.querySelector("#submitBtn"),
   msgBox: document.getElementById("msgBox"),
   formRef: document.querySelector(".form"),
 };
 
+refs.loginInput.addEventListener("focus", onLoginFocus);
 refs.loginInput.addEventListener("blur", onLoginBlur);
+refs.passwordInput.addEventListener("focus", onPasswordFocus);
 refs.passwordInput.addEventListener("blur", onPasswordBlur);
 refs.checkbox.addEventListener("change", onLicenseChange);
 refs.formRef.addEventListener("submit", onFormSubmit);
 refs.submitBtn.addEventListener("click", onBtnClick);
 
+function onLoginFocus(evt) {
+  refs.logInfo.style.display = "block";
+}
+
 function onLoginBlur(evt) {
+  refs.logInfo.style.display = "none";
+
   if (evt.currentTarget.value.length < 4) {
     console.log("Login must contains more than 4 characters");
     refs.loginInput.classList.add("error");
@@ -42,7 +51,13 @@ function onLoginBlur(evt) {
   }
 }
 
+function onPasswordFocus() {
+  refs.passwordInfo.style.display = "block";
+}
+
 function onPasswordBlur(evt) {
+  refs.passwordInfo.style.display = "none";
+
   if (evt.currentTarget.value.length < 8) {
     console.log("Password must contain more than 8 symbols");
     refs.passwordInput.classList.add("error");
@@ -66,9 +81,11 @@ function onBtnClick(evt) {
     refs.passwordInput.classList.contains("error") ||
     !refs.checkbox.checked
   ) {
-    console.log("Register is not compleet");
+    // window.alert("Register is not compleet");
+    refs.msgBox.innerHTML = "Register is not compleet";
   } else {
-    console.log("Register completed");
+    // window.alert("Register completed");
+    refs.msgBox.innerHTML = "Register completed";
   }
 }
 

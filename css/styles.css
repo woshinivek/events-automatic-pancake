@@ -220,6 +220,14 @@ body.show-backdrop .backdrop {
   display: block;
 }
 
+/* .form::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: red;
+} */
+
 #loginInfo,
 #passwordInfo {
   display: none;
