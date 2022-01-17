@@ -208,7 +208,7 @@ body.show-backdrop .backdrop {
 
 #login,
 #password,
-#submitButton {
+#submitBtn {
   display: block;
 }
 

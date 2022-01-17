@@ -11,3 +11,11 @@
   - после нажатия кнопки Войти надо вывести сообщение 
     об успешной авторизацие
 */
+
+const refs = {
+  loginInput: document.getElementById("login"),
+  passwordInput: document.querySelector("#password"),
+  checkbox: document.getElementById("checkbox"),
+  submitBtn: document.querySelector("#submitBtn"),
+  msgBox: document.getElementById("msgBox"),
+};
