@@ -19,40 +19,59 @@ const refs = {
   checkbox: document.getElementById("checkbox"),
   submitBtn: document.querySelector("#submitBtn"),
   msgBox: document.getElementById("msgBox"),
+  formRef: document.querySelector(".form"),
 };
 
 refs.loginInput.addEventListener("blur", onLoginBlur);
 refs.passwordInput.addEventListener("blur", onPasswordBlur);
 refs.checkbox.addEventListener("change", onLicenseChange);
+refs.formRef.addEventListener("submit", onFormSubmit);
+refs.submitBtn.addEventListener("click", onBtnClick);
 
 function onLoginBlur(evt) {
   if (evt.currentTarget.value.length < 4) {
-    console.log("hi, add more");
+    console.log("Login must contains more than 4 characters");
     refs.loginInput.classList.add("error");
 
     return;
   } else {
-    console.log("Ok Good");
-    refs.loginInput.classList.remove("error");
+    console.log("Login ok");
+    if (refs.loginInput.classList.contains("error")) {
+      refs.loginInput.classList.remove("error");
+    }
   }
-
-  evt.currentTarget.value = "";
 }
 
 function onPasswordBlur(evt) {
   if (evt.currentTarget.value.length < 8) {
-    console.log("hi, add more");
+    console.log("Password must contain more than 8 symbols");
     refs.passwordInput.classList.add("error");
 
     return;
   } else {
-    console.log("Ok Good");
+    console.log("Password OK");
     refs.passwordInput.classList.remove("error");
   }
-
-  evt.currentTarget.value = "";
 }
 
-function onLicenseChange(evt) {
-  refs.submitBtn.disabled = !evt.currentTarget.checked;
+function onLicenseChange() {
+  if (refs.checkbox.checked) {
+    console.log("Checked");
+  }
+}
+
+function onBtnClick(evt) {
+  if (
+    refs.loginInput.classList.contains("error") ||
+    refs.passwordInput.classList.contains("error") ||
+    !refs.checkbox.checked
+  ) {
+    console.log("Register is not compleet");
+  } else {
+    console.log("Register completed");
+  }
+}
+
+function onFormSubmit(evt) {
+  evt.preventDefault();
 }

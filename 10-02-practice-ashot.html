@@ -12,19 +12,19 @@
       <div id="container">
         <p><a href="/index.html">Back to the main page</a></p>
 
-        <form>
+        <form class="form">
           <label for="login">LogIn</label>
-          <input type="text" id="login" />
+          <input type="text" id="login" autocomplete="off" />
           <div id="loginInfo">Not less than 4 characters</div>
 
           <label for="password">Password</label>
-          <input type="password" id="password" />
+          <input type="password" id="password" autocomplete="off" />
           <div id="passwordInfo">From 8 to 30 characters</div>
 
           <label for="Agree">I agree the rules</label>
           <input type="checkbox" name="agree" id="checkbox" />
 
-          <button type="submit" id="submitBtn" disabled>Submit</button>
+          <button type="submit" id="submitBtn">Submit</button>
 
           <div id="msgBox"></div>
         </form>
