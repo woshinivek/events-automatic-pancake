@@ -23,11 +23,10 @@ const refs = {
 
 refs.loginInput.addEventListener("blur", onLoginBlur);
 refs.passwordInput.addEventListener("blur", onPasswordBlur);
+refs.checkbox.addEventListener("change", onLicenseChange);
 
 function onLoginBlur(evt) {
-  let value = evt.currentTarget.value;
-
-  if (value.length < 4) {
+  if (evt.currentTarget.value.length < 4) {
     console.log("hi, add more");
     refs.loginInput.classList.add("error");
 
@@ -37,13 +36,11 @@ function onLoginBlur(evt) {
     refs.loginInput.classList.remove("error");
   }
 
-  value = "";
+  evt.currentTarget.value = "";
 }
 
 function onPasswordBlur(evt) {
-  let value = evt.currentTarget.value;
-
-  if (value.length < 8) {
+  if (evt.currentTarget.value.length < 8) {
     console.log("hi, add more");
     refs.passwordInput.classList.add("error");
 
@@ -53,5 +50,9 @@ function onPasswordBlur(evt) {
     refs.passwordInput.classList.remove("error");
   }
 
-  value = "";
+  evt.currentTarget.value = "";
+}
+
+function onLicenseChange(evt) {
+  refs.submitBtn.disabled = !evt.currentTarget.checked;
 }
