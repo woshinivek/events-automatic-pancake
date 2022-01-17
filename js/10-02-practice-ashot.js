@@ -19,3 +19,13 @@ const refs = {
   submitBtn: document.querySelector("#submitBtn"),
   msgBox: document.getElementById("msgBox"),
 };
+
+refs.loginInput.addEventListener("blur", onLoginBlur);
+
+function onLoginBlur(evt) {
+  Number(evt.currentTarget.value.length) < 4
+    ? console.log("hi, add more")
+    : console.log("Ok Good");
+
+  evt.currentTarget.value = "";
+}
