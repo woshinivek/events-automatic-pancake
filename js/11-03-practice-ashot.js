@@ -26,6 +26,8 @@ const randomizer = (max) => {
 };
 
 const renderForm = () => {
+  const container = document.querySelector("#container");
+  container.innerHTML = "";
   const newForm = document.createElement("div");
   newForm.id = "form";
   newForm.style.cssText = forms[randomizer(forms.length)];
@@ -39,7 +41,11 @@ const renderForm = () => {
   newForm.style.top = `${randomizer(100)}%`;
   newForm.style.left = `${randomizer(100)}%`;
 
-  document.body.firstElementChild.append(newForm);
+  // document.body.firstElementChild.append(newForm);
+  container.append(newForm);
+
+  const formFun = document.getElementById("form");
+  formFun.addEventListener("click", renderForm);
 };
 
 document.addEventListener("DOMContentLoaded", () => {
