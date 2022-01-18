@@ -31,6 +31,14 @@ const renderForm = () => {
   newForm.style.cssText = forms[randomizer(forms.length)];
   newForm.style.backgroundColor = colors[randomizer(forms.length)];
 
+  // newForm.style.cssText = `position: absolute; top: ${randomizer(
+  //   100
+  // )}%; left: ${randomizer(100)}%;`;
+
+  newForm.style.position = "absolute";
+  newForm.style.top = `${randomizer(100)}%`;
+  newForm.style.left = `${randomizer(100)}%`;
+
   document.body.firstElementChild.append(newForm);
 };
 
