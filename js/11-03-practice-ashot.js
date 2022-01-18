@@ -25,8 +25,15 @@ const randomizer = (max) => {
   return Math.floor(Math.random() * max);
 };
 
-const newForm = document.createElement("div");
-// newForm.style.cssText = forms[0];
-// newForm.style.backgroundColor = `${colors[2]}`;
+const renderForm = () => {
+  const newForm = document.createElement("div");
+  newForm.id = "form";
+  newForm.style.cssText = forms[randomizer(forms.length)];
+  newForm.style.backgroundColor = colors[randomizer(forms.length)];
 
-document.body.firstElementChild.append(newForm);
+  document.body.firstElementChild.append(newForm);
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderForm();
+});
