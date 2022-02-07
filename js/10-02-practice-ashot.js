@@ -82,7 +82,7 @@ function onBtnClick(evt) {
     !refs.checkbox.checked
   ) {
     // window.alert("Register is not compleet");
-    refs.msgBox.innerHTML = "Register is not compleet";
+    refs.msgBox.innerHTML = "Register is not complete";
   } else {
     // window.alert("Register completed");
     refs.msgBox.innerHTML = "Register completed";
