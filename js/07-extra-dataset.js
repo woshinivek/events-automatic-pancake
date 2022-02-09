@@ -51,7 +51,10 @@
 
 const refs = {
   colorsPrev: document.querySelector(".js-color-preview"),
+
   colorButtons: document.querySelectorAll("button[data-color]"),
+  // colorButtons: Array.from(document.querySelectorAll("button[data-color]")),
+
   actionButtons: document.querySelectorAll("button[data-action]"),
   output: document.querySelector(".js-output"),
 };
