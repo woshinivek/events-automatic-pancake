@@ -68,6 +68,15 @@ ul {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
+
+  transition: translate 0.5s, top 0.5s;
+  transform-origin: 0 0;
+}
+
+.input-label.focused {
+  top: -12px;
+
+  transform: scale(0.8);
 }
 
 .input {
@@ -132,7 +141,6 @@ ul {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  /* align-items: flex-start; */
   align-content: flex-start;
 
   max-width: 300px;
