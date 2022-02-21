@@ -73,10 +73,7 @@ ul {
 }
 
 .input-label.focused {
-  top: -50%;
-  left: -3%;
-
-  transform: scale(0.8);
+  transform: translate(-10%, -60%) scale(0.9);
 }
 
 .input {
@@ -198,6 +195,6 @@ ul {
 }
 
 .box-1:hover {
-  transform: rotate(180deg);
+  transform: translate(-10%, -10%) scale(0.8);
   background-color: rgb(134, 3, 3);
 } */
