@@ -11,5 +11,7 @@ function onInputFocus(evt) {
 }
 
 function onInputBlur(evt) {
+  if (evt.currentTarget.value !== "") return;
+
   refs.label.classList.remove("focused");
 }

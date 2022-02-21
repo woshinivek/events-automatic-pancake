@@ -173,13 +173,13 @@ ul {
   display: flex;
 }
 
-/* .box-0 {
+.box-0 {
   display: flex;
   justify-content: center;
   align-items: center;
 
-  width: 350px;
-  height: 350px;
+  width: 250px;
+  height: 250px;
 
   outline: 1px solid grey;
 }
@@ -197,4 +197,4 @@ ul {
 .box-1:hover {
   transform: translate(-10%, -10%) scale(0.8);
   background-color: rgb(134, 3, 3);
-} */
+}
