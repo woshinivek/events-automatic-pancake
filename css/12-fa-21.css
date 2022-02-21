@@ -75,7 +75,7 @@ ul {
 .input-label.focused {
   top: -50%;
   left: -3%;
-  transform: translateY(-50%);
+
   transform: scale(0.8);
 }
 
