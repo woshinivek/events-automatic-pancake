@@ -175,3 +175,29 @@ ul {
 .action__btns {
   display: flex;
 }
+
+/* .box-0 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 350px;
+  height: 350px;
+
+  outline: 1px solid grey;
+}
+
+.box-1 {
+  width: 100px;
+  height: 100px;
+  background-color: grey;
+  border: 1px solid red;
+  border-radius: 4px;
+
+  transition: transform 500ms ease-in-out, background-color 600ms ease-in-out;
+}
+
+.box-1:hover {
+  transform: rotate(180deg);
+  background-color: rgb(134, 3, 3);
+} */
