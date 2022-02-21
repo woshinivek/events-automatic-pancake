@@ -15,3 +15,27 @@ function onInputBlur(evt) {
 
   refs.label.classList.remove("focused");
 }
+
+class ToDoList {
+  constructor() {
+    this.list = [];
+  }
+
+  add(newToDo) {
+    this.list = [...this.list, newToDo];
+  }
+
+  remove() {}
+}
+
+class ToDo {
+  constructor({ id, title, description } = {}) {
+    this.id = id;
+    this.title = title;
+    this.descrption = description;
+  }
+}
+
+const first = new ToDo({ id: Date.now(), title: "Hi", description: "Hello" });
+
+console.log(first);
