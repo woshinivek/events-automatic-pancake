@@ -21,21 +21,23 @@ class ToDoList {
     this.list = [];
   }
 
-  add(newToDo) {
+  add(toDo) {
     this.list = [...this.list, newToDo];
   }
 
-  remove() {}
-}
-
-class ToDo {
-  constructor({ id, title, description } = {}) {
-    this.id = id;
-    this.title = title;
-    this.descrption = description;
+  remove(id) {
+    this.list = [...this.list].filter((toDo) => toDo.id !== id);
   }
 }
 
-const first = new ToDo({ id: Date.now(), title: "Hi", description: "Hello" });
+class ToDo {
+  constructor({ title, description } = {}) {
+    this.id = Date.now();
+    this.title = title;
+    this.description = description;
+  }
+}
+
+const first = new ToDo({ title: "Hi", description: "Hello" });
 
 console.log(first);
