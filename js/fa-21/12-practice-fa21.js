@@ -27,6 +27,25 @@ const secondTask = new ToDo({ title: "putin huilo" });
 toDoList.add(firstTask);
 toDoList.add(secondTask);
 
-console.log(toDoList.allTasks);
+const toDoView = ({ id, title } = {}) => {
+  const toDoWrapperRef = document.createElement("div");
+  toDoWrapperRef.classList.add("to-do");
 
-// console.log(toDoList);
+  const titleRef = document.createElement("p");
+  titleRef.textContent = title;
+  titleRef.classList.add("to-do__description");
+
+  const deleteBtnRef = document.createElement("button");
+  deleteBtnRef.textContent = "Delete";
+  deleteBtnRef.classList.add("btn", "btn-remove");
+
+  toDoWrapperRef.append(titleRef, deleteBtnRef);
+
+  return toDoWrapperRef;
+};
+
+const firstOne = toDoView(firstTask);
+const secondOne = toDoView(secondTask);
+
+console.log(firstOne);
+console.log(secondOne);
