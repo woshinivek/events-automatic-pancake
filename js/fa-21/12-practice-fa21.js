@@ -1,3 +1,6 @@
+import ToDoList from "./ToDoList.js";
+import ToDo from "./ToDo.js";
+
 const refs = {
   label: document.querySelector(".input-label"),
   input: document.querySelector(".input"),
@@ -16,31 +19,6 @@ function onInputBlur(evt) {
   refs.label.classList.remove("focused");
 }
 
-class ToDoList {
-  constructor() {
-    this.list = [];
-  }
-
-  add(toDo) {
-    this.list = [...this.list, toDo];
-  }
-
-  remove(id) {
-    this.list = [...this.list].filter((toDo) => toDo.id !== id);
-  }
-
-  get allTasks() {
-    return this.list;
-  }
-}
-
-class ToDo {
-  constructor({ title } = {}) {
-    this.id = Date.now();
-    this.title = title;
-  }
-}
-
 const toDoList = new ToDoList();
 
 const firstTask = new ToDo({ title: "Hello tupangi" });
@@ -49,6 +27,6 @@ const secondTask = new ToDo({ title: "putin huilo" });
 toDoList.add(firstTask);
 toDoList.add(secondTask);
 
-// console.log(toDoList.allTasks);
+console.log(toDoList.allTasks);
 
 // console.log(toDoList);
