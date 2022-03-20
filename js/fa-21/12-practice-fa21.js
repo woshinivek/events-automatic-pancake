@@ -33,3 +33,18 @@ const secondOne = toDoView(secondTask);
 
 console.log(firstOne);
 console.log(secondOne);
+
+// -------------------------------------------------------------------------
+// -------------------------------------------------------------------------
+
+const simb = Symbol("Hi");
+
+const users = {
+  user: "Mango",
+};
+
+let id = Symbol("id");
+
+users[id] = 1;
+
+console.log(users);
