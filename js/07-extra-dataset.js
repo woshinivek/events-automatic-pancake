@@ -49,49 +49,67 @@
 // ----------------------------------------------------------------------
 // ----------------------------------------------------------------------
 
+// const refs = {
+//   colorsPrev: document.querySelector(".js-color-preview"),
+
+//   colorButtons: document.querySelectorAll("button[data-color]"),
+//   // colorButtons: Array.from(document.querySelectorAll("button[data-color]")),
+
+//   actionButtons: document.querySelectorAll("button[data-action]"),
+//   output: document.querySelector(".js-output"),
+// };
+
+// refs.colorButtons.forEach((button) => {
+//   button.addEventListener("click", onColorBtnClick);
+// });
+
+// refs.actionButtons.forEach((button) => {
+//   button.addEventListener("click", onActionBtnClick);
+// });
+
+// function onColorBtnClick(evt) {
+//   refs.colorsPrev.style.backgroundColor = evt.currentTarget.dataset.color;
+//   //   console.log(evt.currentTarget.dataset.color);
+// }
+
+// function onActionBtnClick(evt) {
+//   refs.output.textContent = evt.currentTarget.dataset.action;
+
+//   switch (evt.currentTarget.dataset.action) {
+//     case "approve":
+//       refs.output.textContent = "Заказ подтвержден";
+//       break;
+
+//     case "edit":
+//       refs.output.textContent = "Заказ Редактируется";
+//       break;
+
+//     case "delete":
+//       refs.output.textContent = "Заказ удален";
+//       break;
+
+//     default:
+//       console.log("Ting bu dong");
+//   }
+// }
+
+// ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
+
 const refs = {
-  colorsPrev: document.querySelector(".js-color-preview"),
-
-  colorButtons: document.querySelectorAll("button[data-color]"),
-  // colorButtons: Array.from(document.querySelectorAll("button[data-color]")),
-
-  actionButtons: document.querySelectorAll("button[data-action]"),
-  output: document.querySelector(".js-output"),
+  colorsContainer: document.querySelector("#colors"),
+  colorPreview: document.querySelector(".js-color-preview"),
 };
 
-refs.colorButtons.forEach((button) => {
-  button.addEventListener("click", onColorBtnClick);
-});
+refs.colorsContainer.addEventListener("click", onColorsBtnClick);
 
-refs.actionButtons.forEach((button) => {
-  button.addEventListener("click", onActionBtnClick);
-});
-
-function onColorBtnClick(evt) {
-  refs.colorsPrev.style.backgroundColor = evt.currentTarget.dataset.color;
-  //   console.log(evt.currentTarget.dataset.color);
-}
-
-function onActionBtnClick(evt) {
-  refs.output.textContent = evt.currentTarget.dataset.action;
-
-  switch (evt.currentTarget.dataset.action) {
-    case "approve":
-      refs.output.textContent = "Заказ подтвержден";
-      break;
-
-    case "edit":
-      refs.output.textContent = "Заказ Редактируется";
-      break;
-
-    case "delete":
-      refs.output.textContent = "Заказ удален";
-      break;
-
-    default:
-      console.log("Ting bu dong");
+function onColorsBtnClick(evt) {
+  if (evt.target.nodeName !== "BUTTON") {
+    return;
   }
-}
 
-// ----------------------------------------------------------------------
-// ----------------------------------------------------------------------
+  console.log("currentTarget: ", evt.currentTarget);
+  console.log("target: ", evt.target);
+
+  refs.colorPreview.style.backgroundColor = evt.target.dataset.color;
+}

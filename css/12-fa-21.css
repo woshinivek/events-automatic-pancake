@@ -201,3 +201,7 @@ ul {
   transform: translate(-10%, -10%) scale(0.8);
   background-color: rgb(134, 3, 3);
 }
+
+#colors {
+  outline: 1px solid red;
+}
