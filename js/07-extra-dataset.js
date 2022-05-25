@@ -104,12 +104,15 @@ const refs = {
 refs.colorsContainer.addEventListener("click", onColorsBtnClick);
 
 function onColorsBtnClick(evt) {
-  if (evt.target.nodeName !== "BUTTON") {
+  if (evt.target.nodeName !== "BUTTON" && !evt.target.dataset.color) {
+    console.log("not");
     return;
   }
 
-  console.log("currentTarget: ", evt.currentTarget);
   console.log("target: ", evt.target);
+  console.log("evt.target.dataset.color: ", evt.target.dataset.color);
 
   refs.colorPreview.style.backgroundColor = evt.target.dataset.color;
 }
+
+console.log("BUTTON" !== "BUTTON");
